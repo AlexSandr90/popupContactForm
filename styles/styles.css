@@ -1,0 +1,332 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+/* FONT AWESOME */
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.fa-user:before {
+    content: "\f007"; }
+
+.fa-user-alt:before {
+    content: "\f406"; }
+
+.fa-user-alt-slash:before {
+    content: "\f4fa"; }
+
+.fa-user-astronaut:before {
+    content: "\f4fb"; }
+
+.fa-user-check:before {
+    content: "\f4fc"; }
+
+.fa-user-circle:before {
+    content: "\f2bd"; }
+
+.fa-user-clock:before {
+    content: "\f4fd"; }
+
+.fa-user-cog:before {
+    content: "\f4fe"; }
+
+.fa-user-edit:before {
+    content: "\f4ff"; }
+
+.fa-user-friends:before {
+    content: "\f500"; }
+
+.fa-user-graduate:before {
+    content: "\f501"; }
+
+.fa-user-injured:before {
+    content: "\f728"; }
+
+.fa-user-lock:before {
+    content: "\f502"; }
+
+.fa-user-md:before {
+    content: "\f0f0"; }
+
+.fa-user-minus:before {
+    content: "\f503"; }
+
+.fa-user-ninja:before {
+    content: "\f504"; }
+
+.fa-user-nurse:before {
+    content: "\f82f"; }
+
+.fa-user-plus:before {
+    content: "\f234"; }
+
+.fa-user-secret:before {
+    content: "\f21b"; }
+
+.fa-user-shield:before {
+    content: "\f505"; }
+
+.fa-user-slash:before {
+    content: "\f506"; }
+
+.fa-user-tag:before {
+    content: "\f507"; }
+
+.fa-user-tie:before {
+    content: "\f508"; }
+
+.fa-user-times:before {
+    content: "\f235"; }
+
+.fa-users:before {
+    content: "\f0c0"; }
+
+.fa-users-cog:before {
+    content: "\f509"; }
+
+.fa-phone-alt:before {
+    content: "\f879"; }
+
+.fa-envelope:before {
+    content: "\f0e0"; }
+
+.fa-envelope-open:before {
+    content: "\f2b6"; }
+
+.fa-envelope-open-text:before {
+    content: "\f658"; }
+
+.fa-envelope-square:before {
+    content: "\f199"; }
+
+.fa-2x {
+    font-size: 2em; }
+
+/*CUSTOM STYLES FORM*/
+
+html, body {
+    background-color: #F6F7F9;
+}
+
+#feedback-page{
+    text-align:center;
+}
+
+#text-feedback{
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color:#4B4E63;
+    text-align:center;
+}
+
+#form-main {
+    width:100%;
+    float:left;
+    padding-top:30px;
+}
+
+#form-div {
+    background-color:#5D84A5;
+    padding: 35px 35px 50px 35px;
+    width: calc(100% - 250px);
+    max-width: 450px;
+    height: calc(100% - 250px);
+    margin: 0 auto;
+}
+
+.feedback-input {
+    opacity: 0.9;
+    color:#02c7ff;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    background-color: #fbfbfb;
+    border: none;
+    outline: none;
+    padding: 13px 13px 13px 15px;
+    width: calc(100% - 20px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.feedback-input:focus {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: none;
+    border: 0 solid #ffffff;
+    outline: none;
+    color: #3498db;
+    padding: 13px 13px 13px 15px;
+}
+
+.focused {
+    color:#30aed6;
+    border:#30aed6 solid 3px;
+}
+
+/* Icons ---------------------------------- */
+#name {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#name:focus {
+    outline: none;
+}
+#phone {
+    border-radius: 10px;
+}
+
+#phone:focus {
+
+}
+#meter {
+    border-radius: 10px;
+}
+#meter select {
+    font-size: .9rem;
+    padding: 2px 5px;
+}
+
+#meter:focus{
+
+}
+
+#email {
+    border-radius: 10px;
+}
+
+#email:focus {
+
+}
+
+#comment {
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    background-color:white;
+}
+
+#button-blue {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    float:left;
+    width: 100%;
+    border: #fbfbfb solid 4px;
+    cursor:pointer;
+    background-color: #3498db;
+    color: #ffffff;
+    font-size: 24px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+
+#button-blue:hover {
+    background-color: rgba(0,0,0,0);
+    color: #0493bd;
+}
+
+.submit:hover {
+    color: #3498db;
+}
+
+.ease {
+    border-top:3px #3c3c3c solid;
+    width: 0px;
+    height: 76px;
+    background-color: #fbfbfb;
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    -o-transition: .5s ease;
+    -ms-transition: .5s ease;
+    transition: .5s ease;
+}
+
+.submit:hover .ease{
+    width:100%;
+    background-color:white;
+}
+
+@media only screen and (max-width: 580px) {
+    #form-div{
+        left: 3%;
+        margin-right: 3%;
+        width: 88%;
+        margin-left: 0;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+.meter-label {
+    color: #000000;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.meter-select {
+    width: calc(60% - 80px);
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.name, .phone, .email {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-left: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.name:hover, .phone:hover, .email:hover {
+    cursor: pointer;
+}
+.name i, .phone i, .email i {
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.name i:hover, .phone i:hover, .email i:hover {
+    cursor: pointer;
+}

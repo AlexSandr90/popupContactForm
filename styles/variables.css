@@ -1,0 +1,19 @@
+:root {
+    --main-bg-color-form: #3498db;
+    --main-color: #ffffff;
+    --main-border-color: #fbfbfb;
+    --popup-bg-color: rgba(0, 0, 0, 0.5);
+    --popup-bg-color-secondary: rgba(0, 0, 0, 0);
+    --form-div-bg-color: #5D84A5;
+    --font-color-form: #02c7ff;
+    --font-family-form: 'Montserrat', Helvetica, Arial, sans-serif;
+    --input-bg-color: #fbfbfb;
+    --color-focused: #30aed6;
+    --secondary-color: #0493bd;
+    --ease-border: #3c3c3c;
+    --color-hover: #3498db;
+    --color-label: #000000;
+    --border-color-error: #ff1e0a;
+    --html-bg-color: #F6F7F9;
+    --close-btn-color: #333333;
+}
