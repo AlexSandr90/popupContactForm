@@ -30,7 +30,7 @@ const removeClass = (el, className) => el.classList.remove(className);
 const addClass = (el, className) => el.classList.add(className);
 
 const toggleModal = (el, className, time) => {
-    setTimeout(() => toggleClass(name,className), time);
+    setTimeout(() => toggleClass(el,className), time);
 };
 
 const itemValidate = (item, itemFormat, itemFocus,  placeholderValue, className) => {
@@ -81,7 +81,7 @@ const submitForm = () => event => {
 
     const nameChecked = itemValidate(name, nameFormat, document.contactForm.name, 'Невірний формат даних', 'error-box-form');
     const phoneChecked = itemValidate(phone, phoneFormat, document.contactForm.phone, 'Невірний формат номеру', 'error-box-form');
-    const emailChecked = itemValidate(email, emailFormat, document.contactForm.email, 'Невірний формат пошти', 'error-box-form');
+    const emailChecked = itemValidate(email, mailFormat, document.contactForm.email, 'Невірний формат пошти', 'error-box-form');
     const wileId1 = $("#meter-select-agro option:selected").text();
     $("#wileId").val(wileId1);
 
@@ -99,10 +99,10 @@ const submitForm = () => event => {
 };
 
 // toggle.addEventListener('click',() => toggleModal(formMain));
-toggle.onclick = () => toggleModal(formMain);
-// window.addEventListener('click', windowOnClick);
+toggle.onclick = () => toggleModal(formMain, 'show-modal', 500);
+window.addEventListener('click', windowOnClick);
 
-window.onclick = windowOnClick('click', formMain, 'show-modal');
+// window.onclick = windowOnClick('click', formMain, 'show-modal');
 
 close.addEventListener('click', () => {
     setTimeout(() => removeClass(formMain, 'show-modal'), 500);
