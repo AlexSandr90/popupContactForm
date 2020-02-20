@@ -101,8 +101,11 @@ const submitForm = () => event => {
 // toggle.addEventListener('click',() => toggleModal(formMain));
 toggle.onclick = () => toggleModal(formMain, 'show-modal', 500);
 window.addEventListener('click', windowOnClick);
+window.removeEventListener('click', windowOnClick);
 
 // window.onclick = windowOnClick('click', formMain, 'show-modal');
+
+
 
 close.addEventListener('click', () => {
     setTimeout(() => removeClass(formMain, 'show-modal'), 500);
