@@ -4,117 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Popup Form</title>
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="container-wrap">
-        <input type="button" id="popup-toggle" class="popup-toggle" value="Прийняти учать">
+<div class="container-wrap">
+    <input type="button" id="popup-toggle" class="popup-toggle" value="Прийняти учать">
 
 
-        <div id="form-main" class="form-main">
-            <div id="form-div" class="form-div">
-                <div class="close" id="close"></div>
-                <form class="form" id="form1" method="GET" action="action.html" name="contactForm">
+    <div id="form-main" class="form-main">
+        <div id="form-div" class="form-div">
+            <div class="close" id="close"></div>
+            <form class="form" id="form1" name="contactForm">
 
-                    <p class="name">
-                        <label for='name'>
-                            <i class="fas fa-user fa-2x"></i>
-                        </label>
-                        <input name="name"
-                               type="text"
-                               class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
-                               placeholder="*Ваше ім'я"
-                               id="name"
-                               value=""
-                               required
-                        />
-                    </p>
+                <p class="name">
+                    <label for='name-agro'>
+                        <i class="fas fa-user fa-2x"></i>
+                    </label>
+                    <input name="name"
+                           type="text"
+                           class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
+                           placeholder="*Ваше ім'я"
+                           id="name-agro"
+                           value=""
+                           required
+                    />
+                </p>
 
-                    <p class="phone">
-                        <label for="phone">
-                            <i class="fas fa-phone-alt fa-2x"></i>
-                        </label>
-                        <input name="phone"
-                               type="phone"
-                               class="validate[required,custom[phone]] feedback-input"
-                               id="phone"
-                               placeholder="*Телефон (+380 хххх хх хх)"
-                               value=""
-                               required
-                        />
-                    </p>
+                <p class="phone">
+                    <label for="phone-agro">
+                        <i class="fas fa-phone-alt fa-2x"></i>
+                    </label>
+                    <input name="phone"
+                           type="text"
+                           class="validate[required,custom[phone]] feedback-input"
+                           id="phone-agro"
+                           placeholder="*Телефон (+380 хххх хх хх)"
+                           value=""
+                           required
+                    />
+                </p>
 
-                    <p class="email">
-                        <label for="email">
-                            <i class="far fa-envelope fa-2x"></i>
-                        </label>
-                        <input name="email"
-                               type="text"
-                               class="validate[required,custom[email]] feedback-input"
-                               id="email"
-                               placeholder="*Поштова скринька"
-                               value=""
-                               required
-                        />
-                    </p>
+                <p class="email">
+                    <label for="email-agro">
+                        <i class="far fa-envelope fa-2x"></i>
+                    </label>
+                    <input name="email"
+                           type="text"
+                           class="validate[required,custom[email]] feedback-input"
+                           id="email-agro"
+                           placeholder="*Поштова скринька"
+                           value=""
+                           required
+                    />
+                </p>
 
-                    <p class="meter">
-                        <label for="meter-select" class="meter-label">Виберіть прилад:</label>
-                        <select name="meter" id= "meter-select" class="meter-select">
-                            <option value="wile55">Wile 55</option>
-                            <option value="wile65">Wile 65</option>
-                            <option value="wile78">Wile 78</option>
-                            <option value="wile200">Wile 200</option>
-                        </select>
-                    </p>
+                <p class="company">
+                    <label for='company-agro'>
+                        <i class="fas fa-home fa-2x"></i>
+                    </label>
+                    <input
+                            name="company-agro"
+                            type="text"
+                            class="company-agro validate[required,custom[email]] feedback-input"
+                            id="company-agro"
+                            placeholder='Ваша компанія'
+                    >
+                </p>
 
-                    <p class="text">
+
+                <p class="meter">
+                    <label for="meter-select-agro" class="meter-label">Виберіть прилад:</label>
+                    <select name="meter" id="meter-select-agro" class="meter-select">
+                        <option value="wile55">Wile 55</option>
+                        <option value="wile65">Wile 65</option>
+                        <option value="wile78">Wile 78</option>
+                        <option value="wile200">Wile 200</option>
+                    </select>
+                </p>
+
+                <input type="hidden" id="wileId"/>
+
+                <p class="text">
                         <textarea
                                 name="text"
                                 class="validate[required,length[6,300]] feedback-input"
-                                id="comment"
+                                id="comment-agro"
                                 placeholder="Коментар">
                         </textarea>
-                    </p>
+                </p>
 
 
-                    <div class="submit">
-                        <input
-                                type="submit"
-                                value="Отримати скидку"
-                                id="button-blue"
-                                class="button-blue"
-
-                        />
-                        <div class="ease"></div>
-                    </div>
-                </form>
-            </div>
+                <div class="submit">
+                    <input
+                            type="submit"
+                            value="Отримати скидку"
+                            id="button-blue-agro"
+                            class="button-blue"
+                    />
+                    <div class="ease"></div>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
-    <div id="popup-text-container" class="popup-text-container">
-        <div id="popup-text" class="popup-text">
-            <p>
-                Дякуємо, що прийняли участь в розіграші
-            </p>
-        </div>
+<div id="popup-text-container" class="popup-text-container">
+    <div id="popup-text" class="popup-text">
+        <p>
+            Дякуємо, що прийняли участь в розіграші
+        </p>
     </div>
+</div>
 
 
-
-    <div class="b-container">
-        Sample Text
+<div class="b-container">
+    Sample Text
+</div>
+<div class="b-popup">
+    <div class="b-popup-content">
+        Text in Popup
     </div>
-    <div class="b-popup">
-        <div class="b-popup-content">
-            Text in Popup
-        </div>
-    </div>
+</div>
 
-    <script src="fontawesome/js/all.js"></script>
-    <script src="scripts/index.js"></script>
+<script src="fontawesome/js/all.js"></script>
+<script src="scripts/index.js"></script>
 </body>
 </html>
