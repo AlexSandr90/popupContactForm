@@ -38,6 +38,44 @@ const emailValidate = email => {
     return false;
 };
 
+// const removeClassErrors = (className, ...elements) => {
+//     const el = [...elements];
+//     console.log(el);
+//     elements.forEach(item => removeClass(item, className));
+// };
+
+// const removeClassErrors = (className, ...elements) => elements.forEach(item => removeClass(item, className));
+
+// const windowOnClick = (event, el, classNameToggle) => {
+//     if (event.target === el) {
+//         // setTimeout(() => removeClass(el, classNameToggle), 300);
+//         removeClass(el, classNameToggle);
+//         removeClassErrors('error-box-form', name, phone, email, company);
+//     }
+// };
+
+// const windowOnClick = event => {
+//     if (event.target === formMain) {
+//         setTimeout(() => removeClass(formMain, 'show-modal'), 300);
+//         // removeClassErrors();
+//         removeClassErrors('error-box-form', name, phone, email, company);
+//     }
+// };
+
+// const mirageText = () => {
+//     setTimeout(() => addClass(faidText, 'popup-up'), 750);
+//     setTimeout(() => removeClass(faidText, 'popup-up'), 2000);
+// };
+// const removeClassErrors = () => {
+//     removeClass(name, 'error-box-form');
+//     removeClass(phone, 'error-box-form');
+//     removeClass(email, 'error-box-form');
+//     removeClass(company, 'error-box-form');
+//     name.placeholder = '*Ваше ім\'я';
+//     phone.placeholder = '*Телефон (+380 хххх хх хх)';
+//     email.placeholder = '*Поштова скринька';
+//     company.placeholder = '*Ваша компанія';
+// };
 class ValidateForm {
     constructor({ elem }) {
         this.elem = elem;

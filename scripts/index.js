@@ -12,13 +12,14 @@ const nameFormat = /^[a-zA-Zа-яА-Я ]{2,30}$/;
 const phoneFormat = /^\+?([3-8]{2})\)?([0-9]{10})$/;
 const mailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-const config = {
+let config = {
     fields: {
         "Name": "#name-agro", // ФИО контакта, который регистрируется на мероприятие
         "MobilePhone": "#phone-agro", // Мобильный телефон контакта
         "Email": "#email-agro", // Email контакта
         "Commentary": "#comment-agro",
-        "Company": "#wileId"
+        "Company": "#company-agro",
+        "UsrLeadProduct":"#wileId"
     },
     landingId: "7f0b525b-20af-4f05-b836-f78ea56c7676",
     serviceUrl: "https://crm.s1.ventalab.ua/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
@@ -46,34 +47,25 @@ const itemValidate = (item, itemFormat, itemFocus,  placeholderValue, className)
     return false;
 };
 
-const removeClassErrors = () => {
-    removeClass(name, 'error-box-form');
-    removeClass(phone, 'error-box-form');
-    removeClass(email, 'error-box-form');
-    removeClass(company, 'error-box-form');
-    name.placeholder = '*Ваше ім\'я';
-    phone.placeholder = '*Телефон (+380 хххх хх хх)';
-    email.placeholder = '*Поштова скринька';
-    company.placeholder = '*Ваша компанія';
-};
-
-const windowOnClick = (event, el, classNameToggle) => {
-    if (event.target === el) {
-        setTimeout(() => removeClass(el, classNameToggle), 300);
-        removeClassErrors();
+const getPlaceholderValue = (item, values) => {
+    if (item.length === values.length) {
+        for (let i = 0; i < item.length; i++) {
+            item[i].placeholder = values[i];
+        }
     }
+
 };
 
-// const windowOnClick = event => {
-//     if (event.target === formMain) {
-//         setTimeout(() => removeClass(formMain, 'show-modal'), 300);
-//         removeClassErrors();
-//     }
-// };
+const resetValue = elements => elements.forEach(item => item.value = '');
 
-const mirageText = () => {
-    setTimeout(() => addClass(faidText, 'popup-up'), 500);
-    setTimeout(() => removeClass(faidText, 'popup-up'), 1500);
+const removeClassErrors = (className, ...elements) => {
+    const el = [...elements];
+    el.forEach(item => removeClass(item, className));
+};
+
+const mirageText = (el, className, addTime, removeTime) => {
+    setTimeout(() => addClass(el, className), addTime);
+    setTimeout(() => removeClass(el, className), removeTime);
 };
 
 const submitForm = () => event => {
@@ -82,37 +74,45 @@ const submitForm = () => event => {
     const nameChecked = itemValidate(name, nameFormat, document.contactForm.name, 'Невірний формат даних', 'error-box-form');
     const phoneChecked = itemValidate(phone, phoneFormat, document.contactForm.phone, 'Невірний формат номеру', 'error-box-form');
     const emailChecked = itemValidate(email, mailFormat, document.contactForm.email, 'Невірний формат пошти', 'error-box-form');
+
+    const elements = [name, phone, email, company];
+
     const wileId1 = $("#meter-select-agro option:selected").text();
     $("#wileId").val(wileId1);
 
     if (nameChecked && phoneChecked && emailChecked) {
-        mirageText();
+        mirageText(faidText, 'popup-up', 750, 2000);
         createObject();
-        removeClassErrors();
+        removeClassErrors('error-box-form', name, phone, email, company);
         setTimeout(() => toggleClass(formMain, 'show-modal'), 500);
-        name.value = '';
-        phone.value = '';
-        email.value = '';
-        company.value = '';
+        resetValue(elements);
         return false;
     }
 };
 
-// toggle.addEventListener('click',() => toggleModal(formMain));
 toggle.onclick = () => toggleModal(formMain, 'show-modal', 500);
-window.addEventListener('click', windowOnClick);
-window.removeEventListener('click', windowOnClick);
 
-// window.onclick = windowOnClick('click', formMain, 'show-modal');
+window.onclick = event => {
+    if (event.target === formMain) {
+        setTimeout( () => {
+            removeClass(formMain, 'show-modal');
+            removeClassErrors('error-box-form', name, phone, email, company);
+            let items = [name, phone, email, company];
+            let values = ['*Ваше ім\'я', '*Телефон (+380 хххх хх хх)', '*Поштова скринька', 'Ваша компанія']
+            getPlaceholderValue(items, values);
+        },300);
+    }
+};
 
-
-
-close.addEventListener('click', () => {
-    setTimeout(() => removeClass(formMain, 'show-modal'), 500);
-    removeClassErrors();
-});
-
-
+close.onclick = () => {
+    setTimeout( () => {
+        removeClass(formMain, 'show-modal');
+        removeClassErrors('error-box-form', name, phone, email, company);
+        let items = [name, phone, email, company];
+        let values = ['*Ваше ім\'я', '*Телефон (+380 хххх хх хх)', '*Поштова скринька', 'Ваша компанія']
+        getPlaceholderValue(items, values);
+    },300);
+};
 
 modalOut.addEventListener('click', submitForm('click'));
 modalOut.removeEventListener('click', submitForm('click'));
