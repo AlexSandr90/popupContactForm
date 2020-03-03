@@ -12,20 +12,6 @@ const nameFormat = /^[a-zA-Zа-яА-Я ]{2,30}$/;
 const phoneFormat = /^\+?([3-8]{2})\)?([0-9]{10})$/;
 const mailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-let config = {
-    fields: {
-        "Name": "#name-agro", // ФИО контакта, который регистрируется на мероприятие
-        "MobilePhone": "#phone-agro", // Мобильный телефон контакта
-        "Email": "#email-agro", // Email контакта
-        "Commentary": "#comment-agro",
-        "Company": "#company-agro",
-        "UsrLeadProduct":"#wileId"
-    },
-    landingId: "7f0b525b-20af-4f05-b836-f78ea56c7676",
-    serviceUrl: "https://crm.s1.ventalab.ua/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-    redirectUrl: ''
-};
-
 const addClass = (el, className) => el.classList.add(className);
 const toggleClass = (el, className) => el.classList.toggle(className);
 const removeClass = (el, className) => el.classList.remove(className);
@@ -77,16 +63,11 @@ const submitForm = () => event => {
 
     const elements = [name, phone, email, company];
 
-    const wileId1 = $("#meter-select-agro option:selected").text();
-    $("#wileId").val(wileId1);
-
     if (nameChecked && phoneChecked && emailChecked) {
         mirageText(faidText, 'popup-up', 750, 2000);
-        createObject();
         removeClassErrors('error-box-form', name, phone, email, company);
         setTimeout(() => toggleClass(formMain, 'show-modal'), 500);
         resetValue(elements);
-        return false;
     }
 };
 
@@ -116,11 +97,3 @@ close.onclick = () => {
 
 modalOut.addEventListener('click', submitForm('click'));
 modalOut.removeEventListener('click', submitForm('click'));
-
-function createObject() {
-    landing.createObjectFromLanding(config);
-}
-function initLanding() {
-    landing.initLanding(config);
-}
-jQuery(document).ready(initLanding);
