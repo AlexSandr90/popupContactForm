@@ -26,9 +26,9 @@ let config = {
     redirectUrl: ''
 };
 
+const addClass = (el, className) => el.classList.add(className);
 const toggleClass = (el, className) => el.classList.toggle(className);
 const removeClass = (el, className) => el.classList.remove(className);
-const addClass = (el, className) => el.classList.add(className);
 
 const toggleModal = (el, className, time) => {
     setTimeout(() => toggleClass(el,className), time);
@@ -100,7 +100,7 @@ window.onclick = event => {
             let items = [name, phone, email, company];
             let values = ['*Ваше ім\'я', '*Телефон (+380 хххх хх хх)', '*Поштова скринька', 'Ваша компанія']
             getPlaceholderValue(items, values);
-        },300);
+        }, 300);
     }
 };
 
@@ -111,7 +111,7 @@ close.onclick = () => {
         let items = [name, phone, email, company];
         let values = ['*Ваше ім\'я', '*Телефон (+380 хххх хх хх)', '*Поштова скринька', 'Ваша компанія']
         getPlaceholderValue(items, values);
-    },300);
+    }, 300);
 };
 
 modalOut.addEventListener('click', submitForm('click'));
